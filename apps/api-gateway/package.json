@@ -1,0 +1,28 @@
+{
+  "name": "@multi-vendor-ecommerce/api-gateway",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "serve": {
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@multi-vendor-ecommerce/api-gateway:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@multi-vendor-ecommerce/api-gateway:build:development"
+          },
+          "production": {
+            "buildTarget": "@multi-vendor-ecommerce/api-gateway:build:production"
+          }
+        }
+      }
+    }
+  }
+}
