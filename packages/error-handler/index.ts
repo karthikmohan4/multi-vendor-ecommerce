@@ -25,7 +25,7 @@ export class NotFoundError extends AppError {
 }
 
 //validation error (use for joi/zod/react-hook-form validation errors)
-export class validationError extends AppError {
+export class ValidationError extends AppError {
   constructor(message = "Invalid request data", details?: any) {
     super(message, 400, true, details);
   }
